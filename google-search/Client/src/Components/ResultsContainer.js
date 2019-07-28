@@ -10,7 +10,7 @@ function ResultsContainer(props) {
                     const bookInfo = book.volumeInfo;
                     return <BookResult
                     title={bookInfo.title}
-                    authors={bookInfo.description}
+                    authors={bookInfo.authors}
                     description={bookInfo.description}
                     link={bookInfo.cannonicalVolumeLink}
                     img={bookInfo.imageLinks}
