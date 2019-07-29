@@ -9,7 +9,7 @@ export default {
     },
     addBookToDB: (bookData) => {
         return axios.post("/api/books", bookData);
-    }
+    },
     deleteBook: (id) => {
         return axios.delete(`/api/books/${id}`);
     }
