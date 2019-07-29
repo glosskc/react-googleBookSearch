@@ -1,12 +1,12 @@
 import React from "react";
-import SearchForm from "../Components/SearchForm";
-import ResultsContainer from "../Components/ResultsContainer";
+import SearchForm from "../components/SearchForm";
+import ResultsContainer from "../components/ResultsContainer";
 import API from "../utils/API";
 
 class Search extends React.Component {
     constructor(props) {
         super(props);
-        this.state ={
+        this.state = {
             bookInput: "",
             bookData: []
         }
@@ -14,20 +14,20 @@ class Search extends React.Component {
         this.handleChange = this.handleChange.bind(this);
     }
 
-    handleChange(save) {
-        save.preventDefault();
-        this.setState({bookInput: save.target.value})
+    handleChange(e) {
+        e.preventDefault();
+        this.setState({bookInput: e.target.value})
     }
 
-    handleSearchClick(save) {
-        save.preventDefault();
+    handleSearchClick(e) {
+        e.preventDefault();
         API.searchBooks(this.state.bookInput)
-        .then(
-            (response) => {
-                this.setState({bookData: response.data});
-                this.setState({bookInput: ""});
-            }
-        );
+            .then(
+                (response) => {
+                    this.setState({bookData: response.data});
+                    this.setState({bookInput: ""});
+                }
+            );
     }
 
     render() {
@@ -35,7 +35,7 @@ class Search extends React.Component {
             <main>
                 <SearchForm handleChange={this.handleChange} handleSearchClick={this.handleSearchClick} />
                 {(this.state.bookData.length > 0)?
-                   <ResultsContainer bookData={this.state.bookData} path={this.props.match.path} /> : null
+                    <ResultsContainer bookData={this.state.bookData} path={this.props.match.path}/> : null
                 }
             </main>
         );

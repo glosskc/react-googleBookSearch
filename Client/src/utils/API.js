@@ -13,5 +13,4 @@ export default {
     deleteBook: (id) => {
         return axios.delete(`/api/books/${id}`);
     }
-
 }

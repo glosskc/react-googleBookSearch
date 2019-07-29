@@ -12,7 +12,7 @@ if (process.env.NODE_ENV === "production") {
 }
 
 const mongoose = require("mongoose");
-const mongoURL = process.env.PROD_MONGODB || "mongodb://localhost/GoogleBooks"
+const mongoURL = process.env.PROD_MONGODB || "mongodb://localhost:27017/googlebooks"
 mongoose.connect(mongoURL, {useNewUrlParser: true})
   .then(() => {
     console.log("🗄 ==> Successfully connected to mongoDB.");
@@ -21,7 +21,7 @@ mongoose.connect(mongoURL, {useNewUrlParser: true})
     console.log(`Error connecting to mongoDB: ${err}`);
   });
 
-require("../Routes/api-routes")(app);
+require("./routes/api-routes")(app);
 
 app.listen(PORT, () => {
   console.log(`🌎 ==> API server now on port ${PORT}!`);

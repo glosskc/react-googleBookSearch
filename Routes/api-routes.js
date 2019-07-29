@@ -20,7 +20,7 @@ module.exports = function(app) {
         // set bookTitle to the req.body.title with spaces replaced with plus signs(+)
         let bookTitle = req.body.title.replace(/\s/g, "+");
         axios.get(
-            `https://www.googleapis.com/books/v1/volumes?q=${bookTitle}&key=${process.env.google_key}`
+            `https://www.googleapis.com/books/v1/volumes?q=${bookTitle}&key=${process.env.GBOOKS_KEY}`
         ).then(
             (response) => {
                 res.json(response.data.items)
@@ -51,12 +51,13 @@ module.exports = function(app) {
             }
         ).catch(
             (err) => {
-                res.json({error: err});
+                rres.json({error: err});
             }
         );
     });
 
-    
+    // Send every other request to the React app
+    // Define any API routes before this runs
     app.get("*", (req, res) => {
     res.sendFile(path.join(__dirname, "../client/build/index.html"));
     });

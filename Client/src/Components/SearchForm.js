@@ -5,11 +5,11 @@ function SearchForm(props) {
         <div id="searchContainer">
             <h3>Book Search</h3>
             <form id="bookSearch">
-                <label htmlFor="bookInput" form="bookSearch">Enter a Book to Search:</label>
+                <label htmlFor="bookInput" form="bookSearch">Enter a book to search:</label>
                 <br></br>
-                <input type="text" name="bookInput" id="bookinput" form="bookSearch" onChange={(save) => props.handleChange(save)} placeholder="Book Title" required />
+                <input type="text" name="bookInput" id="bookInput" form="bookSearch" onChange={(e) => props.handleChange(e)} placeholder="Book Title" required/>
                 <br></br>
-                <button type="submit" onClick={(save) => props.handleSearchClick(save)}>Search</button>
+                <button type="submit" onClick={(e) => props.handleSearchClick(e)}>Search</button>
             </form>
         </div>
     );

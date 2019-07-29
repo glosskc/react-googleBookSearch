@@ -1,19 +1,19 @@
 import React from "react";
-import heroBanner from "../images/heroBanner";
+import heroImage from "../images/heroBanner.jpg";
 
 const headerStyle = {
-    "backgroundImage": `url(${heroBanner})`,
-    "maxWidth": "100vw",
-    "height": "calc(100vw * .43333)",
-    "backgroundSize": "cover",
-    "position": "relative"
+  "backgroundImage": `url(${heroImage})`,
+  "maxWidth": "100vw",
+  height: "calc(100vw * .43333)",
+  "backgroundSize": "cover",
+  position: "relative"
 }
 
 function Header() {
     return (
         <header style={headerStyle}>
-        <h1>Google Book Search</h1>
-        <p>Search for your favorite book and save them!</p>
+            <h1>Google Books Search</h1>
+            <p>Search for and Save Books of Interest</p>
         </header>
     );
 }

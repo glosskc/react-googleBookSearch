@@ -1,11 +1,11 @@
 import React from "react";
-import ResultsContainer from "../Components/ResultsContainer";
+import ResultsContainer from "../components/ResultsContainer";
 import API from "../utils/API";
 
 class Saved extends React.Component {
     constructor(props) {
         super(props);
-        this.state ={
+        this.state = {
             savedBooks: []
         }
     }
@@ -26,7 +26,7 @@ class Saved extends React.Component {
         console.log(this.state.savedBooks);
         return(
             <main>
-                <ResultsContainer savedBooks={this.state.savedBooks} path={this.props.match.path} />
+                <ResultsContainer savedBooks={this.state.savedBooks} path={this.props.match.path}/>
             </main>
         );
     }
