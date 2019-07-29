@@ -1,46 +1,36 @@
 {
-  "name": "react-google-search",
+  "name": "react-googlebooksearch",
   "version": "1.0.0",
-  "description": "Google book search",
+  "description": "",
   "main": "server.js",
   "dependencies": {
     "axios": "^0.19.0",
-    "concurrently": "^4.1.1",
-    "cors": "^2.8.5",
     "dotenv": "^8.0.0",
-    "express": "^4.16.3",
-    "express-session": "^1.16.2",
-    "helmet": "^3.20.0",
-    "if-env": "^1.0.4",
+    "express": "^4.17.1",
     "mongoose": "^5.6.7",
-    "passport": "^0.4.0",
-    "passport-local": "^1.0.0",
-    "passport-local-mongoose": "^5.0.1",
     "path": "^0.12.7",
     "yarn": "^1.17.3"
   },
   "devDependencies": {
-    "concurrently": "^4.1.0",
-    "nodemon": "^1.18.7",
-    "node": "^11.6.0"
+    "concurrently": "^4.1.1",
+    "nodemon": "^1.18.7"
   },
   "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
     "start:prod": "node server.js",
     "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
     "client": "cd client && npm run start",
     "seed": "node scripts/seedDB.js",
-    "install": "cd client && npm install",
-    "build": "cd client && npm run build",
-    "heroku-postbuild": "npm run build"
+    "heroku-postbuild": "npm run build",
+    "node": "^11.6.0"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/glosskc/react-googleBookSearch.git"
   },
   "keywords": [
-    "react-crm",
-    "crm"
+    "goolge-book-search"
   ],
   "author": "glosskc",
   "license": "ISC",
