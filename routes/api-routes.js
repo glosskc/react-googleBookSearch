@@ -15,12 +15,14 @@ module.exports = function(app) {
             }
         );
     });
-
+    // ${process.env.GBOOKS_KEY}
     app.post("/search", (req, res) => {
+        console.log(res);
         // set bookTitle to the req.body.title with spaces replaced with plus signs(+)
         let bookTitle = req.body.title.replace(/\s/g, "+");
         axios.get(
-            `https://www.googleapis.com/books/v1/volumes?q=${bookTitle}&key=${process.env.GBOOKS_KEY}`
+            `https://www.googleapis.com/books/v1/volumes?q=${bookTitle}&key=AIzaSyAscEfRB20ROGLFKIOxpKdNTdMOfbMddnA`
+            
         ).then(
             (response) => {
                 res.json(response.data.items)
@@ -59,6 +61,6 @@ module.exports = function(app) {
     // Send every other request to the React app
     // Define any API routes before this runs
     app.get("*", (req, res) => {
-    res.sendFile(path.join(__dirname, "../client/build/index.html"));
+    res.sendFile(path.join(__dirname, "../client/index.html"));
     });
 }
